@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العروض</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="translate.js"></script>
+    <link rel="stylesheet" href="deals.css">
+</head>
+<body>
+    <header>
+        <img src="Images/logo.webp" alt="شعار المنتجع" class="logo">
+        <h1>العروض</h1>
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">الرئيسية</a></li>
+                <li><a href="Booking.html">الحجوزات</a></li>
+                <li><a href="Deals.html" class="active">العروض</a></li>
+                <li><a href="Sports Services.html">الخدمات الرياضية</a></li>
+                <li><a href="Restaurants.html">المطاعم والمقاهي</a></li>
+                <li><a href="Contact us.html">اتصل بنا</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="packages-container">
+        <div class="package-card">
+            <img src="Images/d1.png" alt="الجولة الثلاثية">
+            <h2>الجولة الثلاثية</h2>
+            <p>إقامة لمدة ليلتين في غرفة مزدوجة مع الإفطار، ثلاث جولات - 18 حفرة.</p>
+            <span class="price">200 دولار</span>
+            <button class="btn-fix" onclick="showDetails('الجولة الثلاثية', 'إقامة لمدة ليلتين في غرفة مزدوجة مع الإفطار.<br> ثلاث جولات - 18 حفرة.<br> تشمل جولة واحدة في ملعب <strong>سي فيو</strong> (إن وجدت).<br> تأجير مجاني للعربات.<br> خصم 20% لمتجر المحترفين.')">انقر للتفاصيل</button>
+        </div>
+        <div class="package-card">
+            <img src="Images/d2.png" alt="خمس جولات">
+            <h2>خمس جولات</h2>
+            <p>إقامة كاملة لمدة خمس ليالٍ في جناح فاخر، خمس جولات - 18 حفرة.</p>
+            <span class="price">300 دولار</span>
+            <button onclick="showDetails('خمس جولات', 'إقامة كاملة لمدة خمس ليالٍ في جناح فاخر.<br> خمس جولات - 18 حفرة.<br> جولة واحدة مضمونة في ملعب <strong>سي فيو</strong>.<br> جلسة تدريب رقمية مجانية.')">انقر للتفاصيل</button>
+        </div>
+        <div class="package-card">
+            <img src="Images/d3.png" alt="إستراحة إستجمام">
+            <h2>إستراحة إستجمام</h2>
+            <p>إقامة لليلة واحدة مع وجبة إفطار، عشاء في أي مطعم داخل المنتجع.</p>
+            <span class="price">400 دولار</span>
+            <button onclick="showDetails('استراحة استجمام', 'إقامة لليلة واحدة مع وجبة إفطار.<br> عشاء في أي مطعم داخل المنتجع.<br> الوصول إلى الملاعب (تطبق الرسوم، يُستبعد ملعب <strong>سي فيو</strong>).<br> تأجير نادي مجاني.')">انقر للتفاصيل</button>
+        </div>
+        <div class="package-card">
+            <img src="Images/d1.png" alt="الحزم المخصصة">
+            <h2>الحزم المخصصة</h2>
+            <p>اختر باقتك الخاصة حسب احتياجاتك.</p>
+            <span class="price">مخصص</span>
+            <button style="background-color: #ff8800;" onclick="window.location.href='Contact us.html'">تواصل معنا</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 منتجع هول إن ون. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-details"></p>
+        </div>
+    </div>
+
+    <script>
+        function showDetails(title, details) {
+            document.getElementById("modal-title").textContent = title;
+            document.getElementById("modal-details").innerHTML = details;
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        .packages-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            width: 350px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .package-card:hover {
+            transform: scale(1.08);
+        }
+
+        .package-card img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .price {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+            align-self: center;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .btn-fix {
+            margin-top: auto;
+        }
+    </style>
+</body>
+</html>

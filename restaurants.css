@@ -1,0 +1,89 @@
+/* تنسيق المحتوى فقط دون المساس بالهيدر والفوتر */
+
+/* تنسيق عام للأقسام */
+section {
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+
+/* تنسيق العناوين داخل الأقسام فقط */
+section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-bottom: 5px;
+}
+
+/* تنسيق الفقرات داخل الأقسام */
+section p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* تنسيق القوائم داخل الأقسام */
+section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+section ul li {
+    font-size: 18px;
+    background: #fafafa;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* تأثير اللمس عند تمرير الماوس داخل الأقسام */
+section ul li:hover {
+    background: #f0f0f0;
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+
+/* تنسيق الصور داخل الأقسام */
+section img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* تحسين مظهر الروابط داخل الأقسام */
+section a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+section a:hover {
+    background: #d44a4a;
+    transform: scale(1.05);
+}

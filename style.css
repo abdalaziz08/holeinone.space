@@ -1,0 +1,762 @@
+/* الأساسيات */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e8f5e9; /* أخضر فاتح */
+    color: #333;
+    direction: rtl;
+    text-align: right;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* الروابط */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    color: #ff6600;
+    transform: scale(1.05);
+}
+
+/* رأس الموقع */
+header {
+    background-color: #2e7d32; /* أخضر غامق */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* القائمة */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    font-size: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffd700;
+    color: #333;
+}
+
+/* أقسام الموقع */
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* تحسين زر "انقر للتفاصيل" */
+.btn-details {
+    background-color: #388e3c; /* أخضر */
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-details:hover {
+    background-color: #2e7d32;
+    transform: scale(1.05);
+}
+
+/* صندوق الحوار (Popup Modal) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* زر الإغلاق */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* تذييل الصفحة */
+footer {
+    background-color: #1b5e20; /* أخضر أغمق */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
+
+/* تحسين زر الحزم المخصصة */
+.custom-package-btn {
+    background-color: #ff7f00; /* برتقالي */
+}
+
+.custom-package-btn:hover {
+    background-color: #e66b00; /* لون أغمق عند التحويم */
+}
+
+/* تحسين نموذج الاتصال */
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.contact-form-container {
+    max-width: 500px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+form label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #2e7d32;
+    outline: none;
+    box-shadow: 0 0 8px rgba(46, 125, 50, 0.5);
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #2e7d32;
+    transform: scale(1.05);
+}
+
+/* تحسين الاستجابة للأجهزة الصغيرة */
+@media (max-width: 600px) {
+    .contact-form-container {
+        width: 90%;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Changa:wght@300;400;700&display=swap');
+
+.booking-page {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 50px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.rooms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.room {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 320px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: right;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.room:hover {
+    transform: scale(1.07);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.room img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid #004d40;
+}
+
+.room h3 {
+    background: #004d40;
+    color: white;
+    margin: 0;
+    padding: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Changa', sans-serif;
+    text-align: center;
+}
+
+.room p {
+    padding: 12px 18px;
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+    font-family: 'Changa', sans-serif;
+    text-align: right;
+}
+
+.room .price-container {
+    background: #d32f2f;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.room .details {
+    padding: 0 18px 10px;
+    font-size: 16px;
+    color: #555;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .rooms {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .rooms {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* أسهم التنقل */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    opacity: 0.8; /* وضوح أكثر */
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.4)); /* إضافة ظل ناعم */
+}
+
+/* ظهور السهم عند الضغط فقط */
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+/* تحديد مواقع الأزرار */
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* استبدال النصوص بأيقونات SVG */
+.carousel-btn::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.prev::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7e/Chevron_left_font_awesome.svg');
+}
+
+.next::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6f/Chevron_right_font_awesome.svg');
+}
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    gap: 30px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: right;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    color: #004d00;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* تعديل أزرار الكاروسيل */
+.carousel-btn {
+    background-color: transparent; /* إزالة الخلفية */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* تأثير عند تمرير الماوس */
+.carousel-btn:hover {
+    transform: scale(1.2); /* تكبير السهم قليلاً */
+    opacity: 0.8;
+}
+/* إزالة الخلفية السوداء من أزرار السلايدر */
+.carousel-btn {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+.book-now {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book-now:hover {
+    background-color: #e74c3c;
+}
+/* تنسيق الحزمة بالكامل */
+.package-content {
+    display: flex;  /* استخدام flexbox لترتيب الصورة والسعر بجانب بعض */
+    align-items: center;  /* محاذاة العناصر عموديًا */
+    justify-content: flex-start;  /* التأكد من محاذاة المحتوى إلى اليسار */
+    margin-bottom: 20px;  /* مسافة أسفل الحزمة */
+}
+
+/* تخصيص عنصر السعر */
+.package-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff7f00;  /* لون جذاب */
+    margin-left: 20px;  /* مسافة بين الصورة والسعر */
+    text-align: right;  /* محاذاة السعر لليمين */
+}
+
+/* تخصيص صورة الحزمة */
+.package-image {
+    width: 100%;
+    max-width: 300px;  /* تحديد أقصى عرض للصورة */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;  /* تأثير تكبير الصورة عند التمرير */
+}
+
+/* تأثير تكبير الصورة عند التمرير */
+.package-image:hover {
+    transform: scale(1.05);  /* تكبير الصورة عند التمرير */
+}
+
+/* باقي التنسيق */
+.package {
+    margin-bottom: 30px;
+    text-align: right;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.package:hover {
+    transform: translateY(-10px);
+}
+
+.btn-details {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-details:hover {
+    background-color: #218838;
+}
+
+/* تنسيق قسم الخدمات الرياضية */
+.section {
+    padding: 40px;
+    text-align: center;
+    background: #f4f4f4;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.services-image {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.services-image:hover {
+    transform: scale(1.05);
+}
+
+/* تنسيق الزر */
+.services-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.services-button:hover {
+    background-color: #0056b3;
+}
+/* style.css */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px; /* الحجم الأساسي للشعار */
+    height: auto;
+    border-radius: 50%; /* التأكد من أن الشعار دائري */
+}
+
+/* للهواتف والشاشات الصغيرة */
+@media (max-width: 600px) {
+    .logo {
+        width: 80px; /* تقليل الحجم قليلاً على الهواتف */
+        top: 5px; /* تعديل المسافة من الأعلى */
+        right: 5px; /* تعديل المسافة من اليسار */
+        margin-top: 100px;
+    }   
+}
+
+/* للأجهزة المتوسطة مثل التابلت */
+@media (max-width: 1024px) {
+    .logo {
+        width: 90px; /* حجم مناسب للأجهزة المتوسطة */
+    }
+}
+
+
+/* تنسيق الحزم */
+.package-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.package {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    width: 300px;
+    text-align: center;
+}
+
+.package:hover {
+    transform: scale(1.05);
+}
+
+.package-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.package-content {
+    padding: 15px;
+}
+
+.package h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.package-price {
+    font-size: 18px;
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.btn-details {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.btn-details:hover {
+    background-color: #218838;
+}
+
+/* صندوق الحوار (Modal) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    color: #28a745;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 18px;
+    color: #333;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}

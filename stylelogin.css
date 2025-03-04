@@ -1,0 +1,274 @@
+/* الألوان الأساسية */
+:root {
+    --green: #2e7d32; /* أخضر أساسي */
+    --dark-yellow: #fbc02d; /* أصفر غامق */
+    --text-color: #333;
+    --white: #fff;
+}
+
+/* استيراد خط جميل */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+/* الأساسيات */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e8f5e9; /* أخضر فاتح */
+    color: #333;
+    direction: rtl;
+    text-align: right;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif; /* نفس الخط المستخدم في ملف 1 */
+}
+
+/* الروابط */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    color: #ff6600;
+    transform: scale(1.05);
+}
+
+/* رأس الموقع */
+header {
+    background-color: #2e7d32; /* أخضر غامق */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.8rem; /* نفس الحجم المستخدم في ملف 1 */
+    letter-spacing: 2px; /* إضافة المسافة بين الأحرف */
+    text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+    margin-bottom: 10px;
+}
+
+/* القائمة */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    font-size: 1.2rem; /* نفس الحجم المستخدم في ملف 1 */
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffd700;
+    color: #333;
+}
+
+/* أقسام الموقع */
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    font-size: 2.5rem; /* نفس الحجم المستخدم في ملف 1 */
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1.1rem; /* نفس الحجم المستخدم في ملف 1 */
+    line-height: 1.6;
+    color: #555;
+}
+
+/* تحسين زر "انقر للتفاصيل" */
+.btn-details {
+    background-color: #388e3c; /* أخضر */
+    color: white;
+    font-size: 1.2rem; /* نفس الحجم المستخدم في ملف 1 */
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-details:hover {
+    background-color: #2e7d32;
+    transform: scale(1.05);
+}
+
+/* تنسيق نموذج تسجيل الدخول */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+.form-container h2 {
+    color: var(--green);
+    margin-bottom: 20px;
+    font-weight: 700; /* جعل الخط أكثر احترافية */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: bold; /* تحسين الخط */
+    font-size: 1.1rem;
+}
+
+.btn:hover {
+    background-color: var(--dark-yellow);
+    color: var(--text-color);
+}
+
+.switch {
+    margin-top: 10px;
+}
+
+.switch a {
+    color: var(--green);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch a:hover {
+    text-decoration: underline;
+}
+
+/* إخفاء نموذج التسجيل في البداية */
+.hidden {
+    display: none;
+}
+
+/* الفوتر */
+footer {
+    background-color: var(--green);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+}
+/* تنسيق نموذج تسجيل الدخول */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: var(--white);
+    padding: 40px; /* زيادة المسافة الداخلية */
+    border-radius: 15px; /* تكبير الحواف */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* تكبير الظل لجعل المربع أكثر بروزاً */
+    text-align: center;
+    width: 400px; /* زيادة العرض */
+    max-width: 90%; /* لجعل المربع مرن ومتوافق مع مختلف الشاشات */
+}
+
+.form-container h2 {
+    color: var(--green);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    padding: 12px; /* زيادة حجم الحقول */
+    margin: 12px 0; /* إضافة مسافة بين الحقول */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* تكبير الحواف */
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem; /* تكبير الخط داخل الحقول */
+}
+
+.btn {
+    width: 100%;
+    padding: 12px; /* زيادة حجم الزر */
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 8px; /* تكبير الحواف */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: bold;
+    font-size: 1.2rem; /* تكبير الخط */
+}
+
+.btn:hover {
+    background-color: var(--dark-yellow);
+    color: var(--text-color);
+}
+
+.switch {
+    margin-top: 15px; /* زيادة المسافة بين العناصر */
+}
+
+.switch a {
+    color: var(--green);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch a:hover {
+    text-decoration: underline;
+}
